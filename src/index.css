@@ -86,11 +86,3 @@ p {
   --signup-bg: url("./Assets/backgroundpattern.png") no-repeat center/cover,
     rgba(0, 0, 0, 0.795);
 }
-
-.tes {
-  background-image: url();
-    background-color: #ff0f0f;
-
-  background: url("./Assets/backgroundpattern.png") no-repeat center/cover,
-    linear-gradient(to right, #dedede8c, #dedede8c, #dedede8c);
-}
