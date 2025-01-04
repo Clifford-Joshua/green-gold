@@ -1,0 +1,96 @@
+/* ========================================================= */
+/* General styling */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  display: block;
+}
+
+body {
+  font-family: "Sora", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: unset;
+  margin: unset;
+}
+
+.active {
+  color: white !important;
+  background-color: #06511c;
+}
+
+/* ========================================================= */
+/* root styling */
+:root {
+  --transitions: 1s all linear;
+  --signup-GirlLibrary: linear-gradient(
+      to bottom,
+      #c4c4c400,
+      #c4c4c400,
+      #c79f0040,
+      #c79f0076,
+      #c79f00a4,
+      #c79f00
+    ),
+    url("./Assets/GirlLibrary.png") no-repeat center/cover;
+}
+
+/* ========================================================= */
+/* Day styling */
+.Day {
+  --black-color: black;
+  --bg-black-color: white;
+  --clr-darkgray: darkgray;
+  --clr-darkgreen: #06511c;
+  --clr-theme-transform: translate(100%);
+  --clr-box-shadow-gray: 2px 2px 3px darkgray;
+  --clr-form-box-shadow-gray: 1px 1px 1px 2px rgba(134, 130, 130, 0.699);
+  --theme-bcg-image: url("./Assets/DayBtn.jpg") no-repeat center/cover;
+  --signup-bg: url("./Assets/whitepattern.png") no-repeat center/cover,
+    rgba(211, 211, 211, 0.877);
+}
+
+/* ========================================================= */
+/* Night styling */
+.Night {
+  --black-color: white;
+  --bg-black-color: black;
+  --clr-darkgray: lightgray;
+  --clr-darkgreen: lawngreen;
+  --clr-theme-transform: translate(0);
+  --clr-box-shadow-gray: 2px 2px 3px lightgray;
+  --clr-form-box-shadow-gray: 1px 1px 1px 2px rgba(230, 230, 230, 0.852);
+  --theme-bcg-image: url("./Assets/NightBtn.jpg") no-repeat center/cover;
+  --signup-bg: url("./Assets/backgroundpattern.png") no-repeat center/cover,
+    rgba(0, 0, 0, 0.795);
+}
+
+.tes {
+  background-image: url();
+    background-color: #ff0f0f;
+
+  background: url("./Assets/backgroundpattern.png") no-repeat center/cover,
+    linear-gradient(to right, #dedede8c, #dedede8c, #dedede8c);
+}
