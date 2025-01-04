@@ -4,9 +4,10 @@ import Theme from "./Theme";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { Links } from "../../../Utils/NavLink";
+// eslint-disable-next-line 
 import {
-  FaUserAltSlash,
-  FaUserGraduate,
+  // FaUserAltSlash,
+  // FaUserGraduate,
   FaUserCircle,
   FaUserEdit,
 } from "react-icons/fa";
