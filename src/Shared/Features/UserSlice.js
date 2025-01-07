@@ -9,6 +9,7 @@ const initialState = {
   isUser: false,
   isName: false,
   isEmail: false,
+  isLogin: false,
   isUserName: false,
   isPassWord: false,
   isNumber: false,
@@ -38,6 +39,22 @@ const UserSlice = createSlice({
     checkNumber: (state, action) => {
       state.isNumber = action.payload;
     },
+    isUserLogin: (state) => {
+      state.isUser = true;
+      state.isLogin = true;
+    },
+    isLocalStorageUserLogin: (state) => {
+      if (localStorage.getItem("isUser")) {
+        state.isUser = localStorage.getItem("isUser");
+
+        if (localStorage.getItem("isLogin")) {
+          state.isLogin = localStorage.getItem("isLogin");
+        }
+      }
+      if (sessionStorage.getItem("isUser")) {
+        state.isUser = sessionStorage.getItem("isUser");
+      }
+    },
   },
 });
 
@@ -48,6 +65,8 @@ export const {
   checkNumber,
   checkPassWord,
   checkUserName,
+  isUserLogin,
+  isLocalStorageUserLogin,
 } = UserSlice.actions;
 
 export default UserSlice.reducer;

@@ -3,9 +3,13 @@ import styled from "styled-components";
 const Policy = ({ handleCheck, handlePolicy }) => {
   return (
     <Wrapper>
-      <div className="policy_container" onClick={() => handlePolicy()}>
+      <div className="policy_container">
         <button>
-          <input type="checkbox" className="checkbox" />
+          <input
+            type="checkbox"
+            className="checkbox"
+            onClick={() => handlePolicy()}
+          />
         </button>
         <p className="policy">
           i have read and agree to the{"  "}
@@ -13,9 +17,13 @@ const Policy = ({ handleCheck, handlePolicy }) => {
           {"  "}
         </p>
       </div>
-      <div className="policy_container" onClick={() => handleCheck()}>
+      <div className="policy_container">
         <button>
-          <input type="checkbox" className="checkbox" />
+          <input
+            type="checkbox"
+            className="checkbox"
+            onClick={() => handleCheck()}
+          />
         </button>
         <p className="policy">
           I agree to receiving{"  "}

@@ -11,6 +11,7 @@ import { FaRegCheckCircle, FaEyeSlash, FaEye } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 
 import {
+  isUserLogin,
   checkName,
   checkEmail,
   checkUserName,
@@ -26,6 +27,7 @@ const FormContainer = () => {
     name,
     email,
     number,
+    isUser,
     username,
     password,
     confirmPassword,
@@ -172,6 +174,8 @@ const FormContainer = () => {
       confirmPassword,
     });
 
+    dispatch(isUserLogin());
+
     navigate("/login");
   };
 
@@ -255,8 +259,10 @@ const FormContainer = () => {
     // setting up local storage
     if (isTrue) {
       localStorage.setItem("userStorage", JSON.stringify(allUsers));
+
+      sessionStorage.setItem("isUser", isUser);
     }
-  }, [allUsers, isTrue]);
+  }, [allUsers, isTrue, isUser]);
 
   useEffect(() => {
     setAllUser((prevState) => ({

@@ -1,25 +1,21 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { Form, BgContainer } from "./Login Folder";
-const Login = () => {
+import { Form, BgContainer } from "./ForgottenPassword Page";
+
+const ForgottenPassword = () => {
   const Theme = localStorage.getItem("THEME");
   useEffect(() => {
     document.documentElement.className = Theme;
   }, [Theme]);
 
-  useEffect(() => {
-    alert(
-      "click on remember me before you login else the next time you try logging in you will need to sign up afresh"
-    );
-  }, []);
-
   return (
     <Wrapper>
-      <Form />
       <BgContainer />
+      <Form />
     </Wrapper>
   );
 };
+
 const Wrapper = styled.div`
   /* =========================================================== */
   /* Mobile View */
@@ -28,4 +24,4 @@ const Wrapper = styled.div`
   background: var(--signup-bg);
 `;
 
-export default Login;
+export default ForgottenPassword;

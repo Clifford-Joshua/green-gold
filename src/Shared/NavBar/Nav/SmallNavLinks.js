@@ -5,9 +5,10 @@ import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { Links } from "../../../Utils/NavLink";
 import { closeNav } from "../../Features/NavSlice";
+
 import {
-  // FaUserAltSlash,
-  // FaUserGraduate,
+  FaUserAltSlash,
+  FaUserGraduate,
   FaUserCircle,
   FaUserEdit,
 } from "react-icons/fa";
@@ -15,6 +16,7 @@ import { useDispatch, useSelector } from "react-redux";
 const SmallNavLinks = () => {
   const dispatch = useDispatch();
   const { isNavOpen } = useSelector((store) => store.mobileNav);
+  const { isUser, isLogin } = useSelector((store) => store.user);
 
   return (
     <Wrapper>
@@ -51,27 +53,31 @@ const SmallNavLinks = () => {
 
           {/* Show login signin or logout  */}
           <div className="register_login_container">
-            <Link to={"/signup"} className="sign_up">
-              <div className="icon">
-                <FaUserEdit />
-              </div>
+            {isUser ? (
+              isLogin ? (
+                <button className="login">
+                  <div className="icon">
+                    <FaUserAltSlash />
+                  </div>
+                  <h4 className="link_name">logout</h4>
+                </button>
+              ) : (
+                <Link to={"login"} className="login">
+                  <div className="icon">
+                    <FaUserGraduate />
+                  </div>
+                  <h4 className="link_name">login</h4>
+                </Link>
+              )
+            ) : (
+              <Link to={"/signup"} className="sign_up">
+                <div className="icon">
+                  <FaUserEdit />
+                </div>
 
-              <h4 className="link_name">sign up</h4>
-            </Link>
-
-            {/* <Link to={"/login"} className="login">
-              <div className="icon">
-                <FaUserGraduate />
-              </div>
-              <h4 className="link_name">login</h4>
-            </Link> */}
-
-            {/* <button className="login">
-            <div className="icon">
-              <FaUserAltSlash />
-            </div>
-            <h4 className="link_name">logout</h4>
-          </button> */}
+                <h4 className="link_name">sign up</h4>
+              </Link>
+            )}
           </div>
 
           {/* Theme day or Night */}
