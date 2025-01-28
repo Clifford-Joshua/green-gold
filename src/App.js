@@ -8,6 +8,8 @@ import Profile from "./Pages/Profile Page/Profile";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Admission from "./Pages/Admission Page/Admission";
+import SingleEvent from "./Pages/Single Events/SingleEvent";
+import SingleCourse from "./Pages/Single Course/SingleCourse";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import SharedComponent from "./Shared/Components/SharedComponent";
 import ForgottenPassword from "./Pages/ForgottenPassword/ForgottenPassword";
@@ -21,6 +23,8 @@ function App() {
           <Route path="/about-us" element={<About />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/admission" element={<Admission />} />
+          <Route path="/event/:eventId" element={<SingleEvent />} />
+          <Route path="/course/:courseId" element={<SingleCourse />} />
         </Route>
 
         <Route path="*" element={<Error />} />

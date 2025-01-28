@@ -4,7 +4,7 @@ import Theme from "./Theme";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { Links } from "../../../Utils/NavLink";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import {
   FaUserAltSlash,
@@ -12,8 +12,18 @@ import {
   FaUserCircle,
   FaUserEdit,
 } from "react-icons/fa";
+
+import { isUserLogout } from "../../Features/UserSlice";
+
 const NavLinks = () => {
   const { isUser, isLogin } = useSelector((store) => store.user);
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    localStorage.setItem("isLogin", false);
+
+    dispatch(isUserLogout());
+  };
 
   return (
     <Wrapper>
@@ -33,8 +43,8 @@ const NavLinks = () => {
 
         <div className="register_login_container">
           {isUser ? (
-            isLogin ? (
-              <button className="login">
+            !isLogin ? (
+              <button className="login" onClick={handleLogout}>
                 <div className="icon">
                   <FaUserAltSlash />
                 </div>

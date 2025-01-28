@@ -43,6 +43,9 @@ const UserSlice = createSlice({
       state.isUser = true;
       state.isLogin = true;
     },
+    isUserLogout: (state) => {
+      state.isLogin = false;
+    },
     isLocalStorageUserLogin: (state) => {
       if (localStorage.getItem("isUser")) {
         state.isUser = localStorage.getItem("isUser");
@@ -66,6 +69,7 @@ export const {
   checkPassWord,
   checkUserName,
   isUserLogin,
+  isUserLogout,
   isLocalStorageUserLogin,
 } = UserSlice.actions;
 

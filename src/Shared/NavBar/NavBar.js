@@ -23,9 +23,10 @@ const NavBar = () => {
 const Wrapper = styled.div`
   /* ================================== */
   /* Mobile View */
-  height: 12vh;
+  width: 100%;
+  z-index: 999;
   display: flex;
-  position: relative;
+  position: fixed;
   align-items: center;
   padding: 0.5rem 1rem;
   justify-content: space-between;

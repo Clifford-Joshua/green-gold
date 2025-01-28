@@ -12,11 +12,21 @@ import {
   FaUserCircle,
   FaUserEdit,
 } from "react-icons/fa";
+
 import { useDispatch, useSelector } from "react-redux";
+
+import { isUserLogout } from "../../Features/UserSlice";
+
 const SmallNavLinks = () => {
   const dispatch = useDispatch();
   const { isNavOpen } = useSelector((store) => store.mobileNav);
   const { isUser, isLogin } = useSelector((store) => store.user);
+
+  const handleLogout = () => {
+    localStorage.setItem("isLogin", false);
+
+    dispatch(isUserLogout());
+  };
 
   return (
     <Wrapper>
@@ -54,7 +64,7 @@ const SmallNavLinks = () => {
           {/* Show login signin or logout  */}
           <div className="register_login_container">
             {isUser ? (
-              isLogin ? (
+              !isLogin ? (
                 <button className="login">
                   <div className="icon">
                     <FaUserAltSlash />
@@ -62,7 +72,7 @@ const SmallNavLinks = () => {
                   <h4 className="link_name">logout</h4>
                 </button>
               ) : (
-                <Link to={"login"} className="login">
+                <Link to={"login"} className="login" onClick={handleLogout}>
                   <div className="icon">
                     <FaUserGraduate />
                   </div>
