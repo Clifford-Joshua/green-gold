@@ -14,9 +14,17 @@ const Wrapper = styled.div`
   /* Mobile View */
   .image {
     width: 100%;
-    height: 30vh;
+    height: 35vh;
     object-fit: cover;
     border-radius: 15px;
+  }
+
+  /* ===================================================== */
+  /* Desktop View */
+  @media screen and (width >= 1023px) {
+    .image {
+      height: 70vh;
+    }
   }
 `;
 

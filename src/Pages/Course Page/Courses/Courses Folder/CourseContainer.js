@@ -8,7 +8,9 @@ const CourseContainer = () => {
 
   const [isReadMore] = useState(false);
 
-  const handleDetails = (profilePicture) => {
+  const handleDetails = (profilePicture, text, CourseName) => {
+    localStorage.setItem("CourseText", text);
+    localStorage.setItem("CourseName", CourseName);
     localStorage.setItem("CourseImg", profilePicture);
   };
 
@@ -28,7 +30,9 @@ const CourseContainer = () => {
                   <Link
                     to={`/course/${courseName}`}
                     className="course_icon"
-                    onClick={() => handleDetails(courseImg)}
+                    onClick={() =>
+                      handleDetails(courseImg, courseText, courseName)
+                    }
                   >
                     <div className="icon_holder">{courseIcon}</div>
                   </Link>
@@ -42,7 +46,9 @@ const CourseContainer = () => {
                 <Link
                   to={`/course/${courseName}`}
                   className="readMore"
-                  onClick={() => handleDetails(courseImg)}
+                  onClick={() =>
+                    handleDetails(courseImg, courseText, courseName)
+                  }
                 >
                   read more
                   <FaArrowRight />

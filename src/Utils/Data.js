@@ -23,6 +23,7 @@ import SAE from "../Assets/bg9.jpg";
 import HA from "../Assets/bg7.jpg";
 import AF from "../Assets/bg25.jpg";
 import Sport from "../Assets/Sport.jpg";
+import Teacher from "../Assets/Teacher.jpg";
 import Knowledge from "../Assets/Knowledge.jpg";
 import Art from "../Assets/Art.jpg";
 import Cultural from "../Assets/Harmony.jpg";
@@ -581,6 +582,11 @@ export const Data = {
     },
   ],
   CourseInfo: [
+    {
+      img: Teacher,
+      name: "Frank Mitchel",
+      title: "Teacher",
+    },
     {
       icon: <FaBolt />,
       name: "Science & Engineering",

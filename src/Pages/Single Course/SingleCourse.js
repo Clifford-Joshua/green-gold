@@ -11,6 +11,10 @@ const SingleCourse = () => {
   );
 };
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  /* ================================================ */
+  /* Mobile View */
+  background: var(--general-bg);
+`;
 
 export default SingleCourse;

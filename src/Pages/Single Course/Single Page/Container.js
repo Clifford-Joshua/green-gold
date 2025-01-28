@@ -12,6 +12,7 @@ const Container = () => {
           <ProfileImage />
           <CourseArticle />
         </div>
+
         <div className="course_info_container">
           <CourseInfo />
           <CourseFeature />
@@ -28,36 +29,39 @@ const Wrapper = styled.div`
   padding-block: 4rem;
   align-items: center;
   justify-content: center;
-  border: 2px solid green;
+  background-color: var(--clr-transparent-white);
 
   .general_holder {
-    gap: 1rem;
+    gap: 4rem;
     width: 94%;
     display: flex;
-    border: 2px solid red;
     flex-direction: column;
   }
 
   :is(.course_container, .course_info_container) {
-    gap: 1rem;
+    gap: 4rem;
     display: flex;
     flex-direction: column;
+  }
+
+  .course_container {
+    gap: 2rem;
   }
 
   /* ============================================================= */
   /* Desktop View */
   @media screen and (width >= 1023px) {
     .general_holder {
-      width: 85%;
+      width: 90%;
       flex-direction: row;
     }
 
     .course_container {
-      width: 55%;
+      width: 60%;
     }
 
     .course_info_container {
-      width: 40%;
+      width: 35%;
     }
   }
 `;

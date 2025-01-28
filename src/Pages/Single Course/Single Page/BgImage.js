@@ -23,7 +23,7 @@ const Wrapper = styled.div`
   /* =================================================== */
   /* Mobile View */
   width: 100%;
-  height: 50vh;
+  height: 70vh;
   display: flex;
   color: white;
   align-items: center;
@@ -73,12 +73,6 @@ const Wrapper = styled.div`
     .back_home {
       font-size: 1.2rem;
     }
-  }
-
-  /* =================================================== */
-  /* Desktop View */
-  @media screen and (width >=1023px) {
-    height: 70vh;
   }
 `;
 

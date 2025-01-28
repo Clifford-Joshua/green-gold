@@ -88,6 +88,7 @@ p {
   --clr-darkgreen: #06511c;
   --clr-light-orange: #e49b0f;
   --clr-lighter-green: #097629;
+  --clr-charcoal-color: #36454f;
   --clr-theme-transform: translate(100%);
   --clr-box-shadow-gray: 2px 2px 3px darkgray;
   --clr-transparent-white: rgba(255, 255, 255, 0.623);
@@ -102,11 +103,12 @@ p {
 /* Night styling */
 .Night {
   --black-color: white;
-  --clr-gray-400: #D3D3D3;
+  --clr-gray-400: #d3d3d3;
   --bg-black-color: black;
   --clr-darkgray: lightgray;
   --clr-darkgreen: lawngreen;
   --clr-light-orange: #ffbf00;
+  --clr-charcoal-color: #c0c0c0;
   --clr-theme-transform: translate(0);
   --clr-box-shadow-gray: 2px 2px 3px lightgray;
   --clr-lighter-green: rgba(114, 226, 2, 0.932);
