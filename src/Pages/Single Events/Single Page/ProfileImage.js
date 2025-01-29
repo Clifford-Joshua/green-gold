@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 const ProfileImage = () => {
-  const Image = localStorage.getItem("CourseImg");
+  const Image = localStorage.getItem("EventImg");
   return (
     <Wrapper>
       <img src={Image} alt="img" className="image" />

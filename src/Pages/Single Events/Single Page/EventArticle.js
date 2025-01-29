@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { FaCheck } from "react-icons/fa";
-import classRoom from "../../../Assets/classroom.jpg";
-import animeImg from "../../../Assets/anime_classroom.jpg";
+import classRoom from "../../../Assets/SchoolEvent.jpg";
+import animeImg from "../../../Assets/AnimeEvent.jpg";
 const EventArticle = () => {
   return (
     <Wrapper>
@@ -21,14 +21,20 @@ const EventArticle = () => {
         </p>
 
         <p className="texts">
-          This diversity in learning ensures that people have access to
-          resources to pursue their passions, solve problems, and contribute
-          meaningfully to their communities. In a rapidly changing world, the
-          importance of all Events cannot be overstated. They empower
-          individuals to stay competitive, think critically, and embrace new
-          opportunities. Whether you’re exploring new skills, deepening your
-          expertise, or expanding your understanding of the world, every Event
-          has the potential to transform your journey, making it richer and more
+          School events play a crucial role in the overall development of
+          students by providing opportunities beyond classroom learning. These
+          events—whether academic, cultural, sports-related, or social—help
+          students explore their talents, build confidence, and develop
+          essential life skills such as teamwork, leadership, and communication.
+          Events like science fairs, debate competitions, cultural festivals,
+          and sports days encourage creativity, critical thinking, and a sense
+          of healthy competition. They also foster school spirit and unity,
+          bringing students, teachers, and parents together in a shared
+          celebration of learning and achievement. Additionally, school events
+          provide a platform for students to showcase their abilities, discover
+          new interests, and gain practical experience that prepares them for
+          future challenges. They create lasting memories, strengthen
+          friendships, and make the school experience more enjoyable and
           fulfilling.
         </p>
 
@@ -38,18 +44,17 @@ const EventArticle = () => {
         </div>
 
         <p className="texts">
-          For lifelong learners, Events fuel curiosity and enrich lives by
-          exposing them to diverse topics, cultures, and ideas. Each Event holds
-          unique value because it caters to different needs, aspirations, and
-          stages of life. From science and technology to arts and humanities,
-          every Event builds bridges between theory and practice, helping
-          learners apply their knowledge in real-world scenarios. Power of
-          choice is untrammelled and when nothing prevents our being able to do
-          what we like best, every pleasure is to be welcomed and every pain
-          avoided. But in certain circumstances and owing to the claims of duty
-          or the obligations of business it will frequently occur that pleasures
-          have to be repudiated and annoyances accepted. The wise man therefore
-          always holds in these matters to this principle of selection.
+          By participating in school events, students not only enhance their
+          academic and extracurricular skills but also develop a sense of
+          responsibility and discipline. These experiences contribute to shaping
+          well-rounded individuals who are prepared to take on real-world
+          challenges with confidence. Power of choice is untrammelled and when
+          nothing prevents our being able to do what we like best, every
+          pleasure is to be welcomed and every pain avoided. But in certain
+          circumstances and owing to the claims of duty or the obligations of
+          business it will frequently occur that pleasures have to be repudiated
+          and annoyances accepted. The wise man therefore always holds in these
+          matters to this principle of selection.
         </p>
       </div>
 
@@ -71,47 +76,47 @@ const EventArticle = () => {
         <div className="selection_container">
           <div className="select">
             <FaCheck className="icons" />
-            <p className="texts">Structured Learning</p>
+            <p className="texts">Encourage student participation</p>
           </div>
 
           <div className="select">
             <FaCheck className="icons" />
-            <p className="texts">Skill Development</p>
+            <p className="texts">Promote teamwork and collaboration</p>
           </div>
 
           <div className="select">
             <FaCheck className="icons" />
-            <p className="texts">Knowledge Expansion</p>
+            <p className="texts">Enhance creativity and talent development</p>
           </div>
 
           <div className="select">
             <FaCheck className="icons" />
-            <p className="texts">Career Advancement</p>
+            <p className="texts">Foster school spirit and unity</p>
           </div>
 
           <div className="select">
             <FaCheck className="icons" />
-            <p className="texts">Professional Certification</p>
+            <p className="texts">Provide a platform for leadership skills</p>
           </div>
 
           <div className="select">
             <FaCheck className="icons" />
-            <p className="texts">Adaptation to Change</p>
+            <p className="texts">Strengthen communication and social skills</p>
           </div>
 
           <div className="select">
             <FaCheck className="icons" />
-            <p className="texts">Personal Growth</p>
+            <p className="texts">Celebrate cultural diversity and inclusion</p>
           </div>
 
           <div className="select">
             <FaCheck className="icons" />
-            <p className="texts">Networking Opportunities</p>
+            <p className="texts">Offer practical learning experiences</p>
           </div>
 
           <div className="select">
             <FaCheck className="icons" />
-            <p className="texts">Specialized Knowledge</p>
+            <p className="texts">Build confidence and self-expression</p>
           </div>
         </div>
       </div>
@@ -120,17 +125,20 @@ const EventArticle = () => {
         <h2 className="title">Professional Experience</h2>
 
         <p className="texts">
-          Professional experience is a cornerstone of career development and
-          personal growth. It encompasses the knowledge, skills, and expertise
-          gained through working in specific roles, industries, or projects over
-          time. Unlike theoretical learning, professional experience provides
-          hands-on exposure to real-world challenges, fostering problem-solving
-          skills, adaptability, and the ability to apply knowledge in practical
-          settings. Through professional experience, individuals gain a deeper
-          understanding of workplace dynamics, such as teamwork, communication,
-          and leadership. It helps build technical competencies while nurturing
-          soft skills like time management, decision-making, and conflict
-          resolution, which are crucial for success in any field.
+          Organizing a school event provides valuable professional experience by
+          developing essential skills that are applicable in various career
+          fields. Students gain hands-on exposure to event planning, teamwork,
+          leadership, communication, and problem-solving, all of which are
+          crucial in professional settings. Through roles such as event
+          coordinators, volunteers, or organizers, students learn time
+          management, budgeting, logistics handling, and decision-making. They
+          also interact with teachers, peers, and external stakeholders,
+          improving their ability to collaborate and manage responsibilities
+          effectively. School events simulate real-world work environments,
+          teaching students how to handle pressure, meet deadlines, and adapt to
+          unexpected challenges. These experiences help build confidence,
+          organizational skills, and a strong work ethic, all of which
+          contribute to future academic and professional success.
         </p>
       </div>
     </Wrapper>

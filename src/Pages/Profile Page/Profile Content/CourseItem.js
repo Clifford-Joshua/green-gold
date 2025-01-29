@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 const CourseItem = () => {
   return (
     <Wrapper>
-      {/* <div className="course_container">
+      <div className="Course">
+        {/* <div className="course_container">
         <img src={test} alt="course_img" className="course_img" />
         <div className="course_details">
           <h2 className="course_title">Maths</h2>
@@ -19,17 +20,51 @@ const CourseItem = () => {
         <Link className="class_btn">go to class</Link>
       </div> */}
 
-      <div>
-        <h2 className="text-danger fw-bolder fs-4 text-capitalize">
-          you haven't added any course yet to your profile page
-        </h2>
+        <div>
+          <h2 className="text-danger fw-bolder fs-4 text-capitalize">
+            you haven't added any course yet to your profile page
+          </h2>
 
-        <Link
-          to={"/course"}
-          className="btn btn-outline-success fs-5 fw-bold mt-4"
-        >
-          Visit our course page
-        </Link>
+          <Link
+            to={"/course"}
+            className="btn btn-outline-success fs-5 fw-bold mt-4"
+          >
+            Visit our course page
+          </Link>
+        </div>
+      </div>
+
+      <div className="Event">
+        <h2 className="Event_title">My Event</h2>
+
+        <div className="Event_container">
+          {/* <div className="course_container">
+        <img src={test} alt="course_img" className="course_img" />
+        <div className="course_details">
+          <h2 className="course_title">Maths</h2>
+          <p className="detail">Credits earned: 0 / 2</p>
+          <p className="detail">Course Starts: 8 January 2024</p>
+          <p className="detail">Duration: 6 Month(s)</p>
+          <p className="detail">Site: Miva Open University</p>
+          <p className="detail">Study Mode: Full Time(Distance )</p>
+        </div>
+
+        <Link className="class_btn">go to class</Link>
+      </div> */}
+
+          <div>
+            <h2 className="text-danger fw-bolder fs-4 text-capitalize">
+              you haven't Joined any Events yet to your profile page
+            </h2>
+
+            <Link
+              to={"/course"}
+              className="btn btn-outline-success fs-5 fw-bold mt-4"
+            >
+              Visit our course/Event page
+            </Link>
+          </div>
+        </div>
       </div>
     </Wrapper>
   );
@@ -38,9 +73,12 @@ const CourseItem = () => {
 const Wrapper = styled.div`
   /* ==================================================== */
   /* Mobile View */
-  gap: 1rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  :is(.course_container, .Event_container) {
+    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
 
   .course_container {
     gap: 1rem;
@@ -63,6 +101,15 @@ const Wrapper = styled.div`
     font-weight: 700;
     font-size: 1.3rem;
     letter-spacing: 0.1rem;
+  }
+
+  .Event {
+    padding-block: 3rem;
+  }
+
+  .Event_title {
+    font-size: 1.45rem;
+    padding-block: 1rem;
   }
 
   .detail {

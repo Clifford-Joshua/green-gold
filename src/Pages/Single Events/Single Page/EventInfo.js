@@ -10,7 +10,7 @@ const CourseInfo = () => {
   return (
     <Wrapper>
       <h2 className="title">
-        <span className="dot">Course </span>
+        <span className="dot">Event </span>
         Info
       </h2>
 
@@ -37,13 +37,13 @@ const CourseInfo = () => {
         onClick={() => {
           setJoin(!Join);
           if (!Join) {
-            toast.success("Course Added");
+            toast.success("Event Added");
           } else {
-            toast.error("Course Removed");
+            toast.error("Event Removed");
           }
         }}
       >
-        {Join ? "remove course" : "add course"} <FaArrowRight />{" "}
+        {Join ? "remove event" : "join event"} <FaArrowRight />{" "}
       </button>
     </Wrapper>
   );

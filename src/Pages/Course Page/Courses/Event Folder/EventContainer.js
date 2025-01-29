@@ -7,6 +7,12 @@ const EventContainer = () => {
   const { EventApi } = Data;
   const [isReadMore] = useState(false);
 
+  const handleDetails = (EventName, EventText, EventImg) => {
+    localStorage.setItem("EventName", EventName);
+    localStorage.setItem("EventText", EventText);
+    localStorage.setItem("EventImg", EventImg);
+  };
+
   return (
     <Wrapper>
       <div className="container_holder">
@@ -16,7 +22,13 @@ const EventContainer = () => {
               <div className="event_container" key={index}>
                 <div className="img_container">
                   <img src={eventImg} alt="event_img" className="event_img" />
-                  <Link to={`/event/:${eventName}`} className="event_icon">
+                  <Link
+                    to={`/event/:${eventName}`}
+                    className="event_icon"
+                    onClick={() =>
+                      handleDetails(eventName, eventText, eventImg)
+                    }
+                  >
                     <div className="icon_holder">{eventIcon}</div>
                   </Link>
                 </div>
@@ -26,7 +38,11 @@ const EventContainer = () => {
                     ? eventText
                     : `${eventText.substring(0, 30)}.........`}
                 </p>
-                <Link to={`/event/:${eventName}`} className="readMore">
+                <Link
+                  to={`/event/:${eventName}`}
+                  className="readMore"
+                  onClick={() => handleDetails(eventName, eventText, eventImg)}
+                >
                   read more
                   <FaArrowRight />
                 </Link>

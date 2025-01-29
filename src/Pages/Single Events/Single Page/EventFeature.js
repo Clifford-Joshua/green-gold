@@ -8,7 +8,7 @@ const EventFeature = () => {
   return (
     <Wrapper>
       <h2 className="title">
-        <span className="dot">Course </span>
+        <span className="dot">Event </span>
         Features
       </h2>
 
