@@ -1,12 +1,98 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Data } from "../../../Utils/Data";
 import { FaArrowRight } from "react-icons/fa";
 import { toast } from "react-toastify";
-const CourseInfo = () => {
+const EventInfo = () => {
   const { CourseInfo } = Data;
 
   const [Join, setJoin] = useState(false);
+
+  const EventApi = JSON.parse(localStorage.getItem("EventApi"));
+
+  const initialState = [];
+  const [isClick, setIsClick] = useState(false);
+  const Image = localStorage.getItem("EventImg");
+  const Name = localStorage.getItem("EventName");
+
+  const [EventHolder, setEventHolder] = useState({
+    img: "",
+    name: "",
+    joined: "",
+  });
+  const [SelectedEvent, setSelectedEvent] = useState(initialState);
+
+  const foundCourseIndex =
+    EventApi &&
+    EventApi.length > 0 &&
+    EventApi.findIndex((event_name) => event_name.name === Name);
+
+  const handleClick = () => {
+    setJoin(!Join);
+    if (!Join) {
+      toast.success("Event Added");
+    } else {
+      toast.error("Event Removed");
+    }
+
+    setEventHolder((previous) => ({
+      ...previous,
+      img: Image,
+      name: Name,
+      joined: "Joined",
+    }));
+  };
+
+  useEffect(() => {
+    if (EventHolder.name) {
+      setIsClick(true);
+
+      setSelectedEvent((prev) => [...prev, EventHolder]);
+    }
+    // eslint-disable-next-line
+  }, [EventHolder]);
+
+  useEffect(() => {
+    if (EventApi) {
+      if (EventApi.length >= 1) {
+        setSelectedEvent(EventApi);
+      }
+    }
+    // eslint-disable-next-line
+  }, []);
+
+  useEffect(() => {
+    if (isClick) {
+      localStorage.setItem("EventApi", JSON.stringify(SelectedEvent));
+      setIsClick(false);
+    }
+    // eslint-disable-next-line
+  }, [isClick]);
+
+  useEffect(() => {
+    if (Join && isClick) {
+      localStorage.setItem("EventApi", JSON.stringify(SelectedEvent));
+      return;
+    }
+
+    if (!Join && foundCourseIndex !== -1 && EventApi) {
+      // Step 1: Create a new array without the removed course
+      const updatedEvents = [
+        ...EventApi.slice(0, foundCourseIndex),
+        ...EventApi.slice(foundCourseIndex + 1),
+      ];
+
+      // Step 2: Update localStorage
+      localStorage.setItem("EventApi", JSON.stringify(updatedEvents));
+
+      // Step 3: Update state to reflect changes
+      setSelectedEvent(updatedEvents);
+    }
+    setIsClick(true);
+
+    // eslint-disable-next-line
+  }, [Join]);
+
   return (
     <Wrapper>
       <h2 className="title">
@@ -15,10 +101,9 @@ const CourseInfo = () => {
       </h2>
 
       <div className="info_container">
-        {CourseInfo.map(({ img, name, title, icon }) => {
-          console.log(icon);
+        {CourseInfo.map(({ img, name, title, icon }, index) => {
           return (
-            <div className="item_holder">
+            <div className="item_holder" key={index}>
               {img && <img src={img} alt="teacher_image" className="image" />}
 
               {icon && <div className="icon_holder">{icon}</div>}
@@ -32,17 +117,7 @@ const CourseInfo = () => {
         })}
       </div>
 
-      <button
-        className="enroll_now"
-        onClick={() => {
-          setJoin(!Join);
-          if (!Join) {
-            toast.success("Event Added");
-          } else {
-            toast.error("Event Removed");
-          }
-        }}
-      >
+      <button className="enroll_now" onClick={handleClick}>
         {Join ? "remove event" : "join event"} <FaArrowRight />{" "}
       </button>
     </Wrapper>
@@ -134,4 +209,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default CourseInfo;
+export default EventInfo;

@@ -39,7 +39,6 @@ const BgImage = () => {
     };
 
     const handleScroll = () => {
-      console.log("me");
 
       if (!scrollStarted && window.scrollY >= TotalHeight) {
         setScrollStarted(true);

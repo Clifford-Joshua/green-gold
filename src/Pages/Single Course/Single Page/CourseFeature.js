@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Data } from "../../../Utils/Data";
 const CourseFeature = () => {
   const { CourseFeature } = Data;
+  
   return (
     <Wrapper>
       <h2 className="title">
@@ -11,9 +12,9 @@ const CourseFeature = () => {
       </h2>
 
       <div className="feature_container">
-        {CourseFeature.map(({ icon, title, detail }) => {
+        {CourseFeature.map(({ icon, title, detail }, index) => {
           return (
-            <div className="features">
+            <div className="features" key={index}>
               <div className="icon_container">
                 {icon}
                 <h2 className="sub_title">{title}</h2>
