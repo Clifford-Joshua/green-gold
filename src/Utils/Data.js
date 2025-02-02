@@ -171,7 +171,7 @@ export const Data = {
       courseImg: CS,
     },
     {
-      courseName: "Web Development (PHP/Laravel)",
+      courseName: "Web Development (PHP)",
       courseText:
         "The development of visual and interactive elements of a website.",
       courseIcon: <LiaConnectdevelop />,

@@ -25,7 +25,7 @@ const BgImage = () => {
       let current = 0;
 
       const increment = () => {
-        current += Math.ceil(targetValue / 50);
+        current += Math.ceil(targetValue / 100);
         if (current > targetValue) {
           current = targetValue;
         }
@@ -39,7 +39,6 @@ const BgImage = () => {
     };
 
     const handleScroll = () => {
-
       if (!scrollStarted && window.scrollY >= TotalHeight) {
         setScrollStarted(true);
         handleCount(500, setCourses);
