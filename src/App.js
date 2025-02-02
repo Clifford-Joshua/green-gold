@@ -1,3 +1,4 @@
+import ScrollToTop from "./ScrollToTop";
 import Home from "./Pages/HomePage/Home";
 import Login from "./Pages/Login Page/Login";
 import Error from "./Pages/Error Page/Error";
@@ -16,6 +17,7 @@ import ForgottenPassword from "./Pages/ForgottenPassword/ForgottenPassword";
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route element={<SharedComponent />} path="/">
           <Route index element={<Home />} />
