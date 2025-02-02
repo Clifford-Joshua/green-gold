@@ -25,7 +25,7 @@ const BgImage = () => {
       let current = 0;
 
       const increment = () => {
-        current += Math.ceil(targetValue / 100);
+        current += Math.ceil(targetValue / 25);
         if (current > targetValue) {
           current = targetValue;
         }
