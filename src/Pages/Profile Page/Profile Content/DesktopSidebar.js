@@ -27,13 +27,13 @@ const Wrapper = styled.div`
   /* ========================================================== */
   /* Desktop View */
   @media screen and (width >= 1023px) {
-    top: 0;
-    left: 0;
-    width: 30%;
+    /* top: 0; */
+    /* left: 0; */
+    width: 100%;
     color: white;
     height: 100vh;
     display: block;
-    position: fixed;
+    /* position: fixed; */
     background: black;
     padding-top: 5rem;
     background: var(--clr-gradient-color);

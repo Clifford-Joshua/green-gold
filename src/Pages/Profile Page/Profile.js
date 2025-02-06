@@ -85,6 +85,7 @@ const Wrapper = styled.div`
   @media screen and (width >= 763px) {
     .main_container {
       width: 96%;
+      height: 100vh;
     }
 
     .sideNavIcon {
@@ -101,6 +102,7 @@ const Wrapper = styled.div`
   /* Desktop View */
   @media screen and (width >= 1023px) {
     gap: 2rem;
+    padding-top: 4.4rem;
 
     .main_container {
       width: 98%;

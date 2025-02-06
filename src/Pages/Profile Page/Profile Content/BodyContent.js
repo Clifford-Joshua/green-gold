@@ -24,6 +24,10 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
   /* ======================================================= */
   /* Ipad View */
   @media screen and (width >= 764px) {
@@ -33,8 +37,13 @@ const Wrapper = styled.div`
   /* ======================================================= */
   /* Desktop View */
   @media screen and (width >= 1023px) {
-    width: 67%;
+    width: 70%;
     gap: 2.5rem;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 `;
 

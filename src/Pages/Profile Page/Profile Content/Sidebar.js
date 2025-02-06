@@ -16,9 +16,9 @@ const Wrapper = styled.div`
   /* ============================================================= */
   /* Desktop View */
   @media screen and (width >= 1023px) {
-    width: 30%;
+    width: 28%;
     height: 100%;
-    position: relative;
+    /* position: relative; */
   }
 `;
 

@@ -7,5 +7,5 @@ export const Links = [
   { name: "home", icon: <FaHome />, link: "/" },
   { name: "academics", icon: <FaBook />, link: "/course" },
   { name: "about us", icon: <FaUsers />, link: "about-us" },
-  { name: "admission", icon: <GiGraduateCap />, link: "admission" },
+  { name: "dashboard", icon: <GiGraduateCap />, link: "dashBoard" },
 ];

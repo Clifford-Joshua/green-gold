@@ -312,6 +312,7 @@ const Wrapper = styled.div`
     border-radius: 10px;
     justify-content: center;
     color: var(--bg-black-color);
+    transition: var(--transitions);
     background-color: var(--clr-lighter-green);
   }
 

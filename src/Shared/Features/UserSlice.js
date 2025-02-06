@@ -15,6 +15,11 @@ const initialState = {
   isNumber: false,
   isConfirmPassWord: false,
   confirmPassword: "",
+  isDashBoard: true,
+  isAssignment: false,
+  isSyllabus: false,
+  isAttendance: false,
+  isSetting: false,
 };
 
 const UserSlice = createSlice({
@@ -58,6 +63,41 @@ const UserSlice = createSlice({
         state.isUser = sessionStorage.getItem("isUser");
       }
     },
+    checkDashboard: (state) => {
+      state.isSetting = false;
+      state.isSyllabus = false;
+      state.isDashBoard = true;
+      state.isAssignment = false;
+      state.isAttendance = false;
+    },
+    checkAssignment: (state) => {
+      state.isSetting = false;
+      state.isSyllabus = false;
+      state.isDashBoard = false;
+      state.isAssignment = true;
+      state.isAttendance = false;
+    },
+    checkSyllabus: (state) => {
+      state.isSetting = false;
+      state.isSyllabus = true;
+      state.isDashBoard = false;
+      state.isAssignment = false;
+      state.isAttendance = false;
+    },
+    checkAttendance: (state) => {
+      state.isSetting = false;
+      state.isSyllabus = false;
+      state.isDashBoard = false;
+      state.isAssignment = false;
+      state.isAttendance = true;
+    },
+    checkSetting: (state) => {
+      state.isSetting = true;
+      state.isSyllabus = false;
+      state.isDashBoard = false;
+      state.isAssignment = false;
+      state.isAttendance = false;
+    },
   },
 });
 
@@ -71,6 +111,11 @@ export const {
   isUserLogin,
   isUserLogout,
   isLocalStorageUserLogin,
+  checkAssignment,
+  checkAttendance,
+  checkDashboard,
+  checkSetting,
+  checkSyllabus,
 } = UserSlice.actions;
 
 export default UserSlice.reducer;
