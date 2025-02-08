@@ -115,7 +115,7 @@ const Setting = () => {
               <label htmlFor="password">new password</label>
               <input
                 type="text"
-                id="password"
+                id="newPassword"
                 name="NewUserPassword"
                 onChange={handleChange}
                 placeholder="Enter new password"
