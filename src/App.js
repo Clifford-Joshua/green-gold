@@ -10,6 +10,7 @@ import SignUp from "./Pages/Sign Up Page/SignUp";
 import Profile from "./Pages/Profile Page/Profile";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ProtectedRoute from "./Utils/ProtectedRoute";
 import Dashboard from "./Pages/DashBoard Page/DashBoardPage";
 import SingleEvent from "./Pages/Single Events/SingleEvent";
 import SingleCourse from "./Pages/Single Course/SingleCourse";
@@ -23,11 +24,36 @@ function App() {
       <Routes>
         <Route element={<SharedComponent />} path="/">
           <Route index element={<Home />} />
-          <Route path="/course" element={<Course />} />
+          <Route
+            path="/course"
+            element={
+              <ProtectedRoute>
+                <Course />
+              </ProtectedRoute>
+            }
+          />
           <Route path="/about-us" element={<About />} />
-          <Route path="/profile" element={<Profile />} />
+
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
+
           <Route path="/contact-us" element={<Contact />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+
           <Route path="/event/:eventId" element={<SingleEvent />} />
           <Route path="/course/:courseId" element={<SingleCourse />} />
         </Route>
