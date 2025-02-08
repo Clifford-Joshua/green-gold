@@ -64,7 +64,7 @@ const SmallNavLinks = () => {
           {/* Show login signin or logout  */}
           <div className="register_login_container">
             {isUser ? (
-              !isLogin ? (
+              isLogin ? (
                 <button className="login">
                   <div className="icon">
                     <FaUserAltSlash />

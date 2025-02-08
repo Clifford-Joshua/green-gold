@@ -20,6 +20,20 @@ const DashBoardHolder = () => {
   );
 };
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  /* ===================================================== */
+  /* Mobile View */
+  .dashboard_container {
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media screen and (width>=764px) {
+    .dashboard_container {
+      gap: 2.5rem;
+    }
+  }
+`;
 
 export default DashBoardHolder;

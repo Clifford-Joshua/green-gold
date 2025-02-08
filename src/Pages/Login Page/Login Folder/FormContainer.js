@@ -64,6 +64,8 @@ const FormContainer = () => {
 
     dispatch(isUserLogin());
 
+    localStorage.setItem("CurrentUserName", userDetails.userName);
+
     navigate("/profile");
   };
   return (

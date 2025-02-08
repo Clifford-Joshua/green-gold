@@ -107,6 +107,10 @@ const Wrapper = styled.div`
     box-shadow: 1px 1px 10px 6px var(--clr-darkgray);
   }
 
+  .course_details {
+    color: var(--black-color);
+  }
+
   .course_img {
     width: 100%;
     height: 25vh;

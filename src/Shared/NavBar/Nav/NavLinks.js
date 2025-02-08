@@ -43,7 +43,7 @@ const NavLinks = () => {
 
         <div className="register_login_container">
           {isUser ? (
-            !isLogin ? (
+            isLogin ? (
               <button className="login" onClick={handleLogout}>
                 <div className="icon">
                   <FaUserAltSlash />

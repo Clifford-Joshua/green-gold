@@ -78,8 +78,8 @@ const Wrapper = styled.div`
   }
 
   .icon_container {
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
     display: flex;
     align-items: center;
     border-radius: 10px;
@@ -88,9 +88,11 @@ const Wrapper = styled.div`
   }
 
   .icon {
+    width: 70%;
+    height: 70%;
     color: white;
-    padding: 0.6rem;
-    font-size: 3rem;
+    padding: 0.4rem;
+    font-size: 5rem;
     border-radius: 50%;
     background-color: blue;
   }

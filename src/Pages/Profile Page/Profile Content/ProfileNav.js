@@ -3,20 +3,36 @@ import styled from "styled-components";
 import { toast } from "react-toastify";
 import { FaUser } from "react-icons/fa";
 import { FaCamera } from "react-icons/fa";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 const getProfile = () => {
   let savedProfileImg = localStorage.getItem("userProfile");
   return savedProfileImg ? savedProfileImg : "";
 };
 
+const getName = () => {
+  let Name = localStorage.getItem("CurrentUserName");
+
+  return Name ? Name : "user001";
+};
+
 const ProfileNav = () => {
   const refContainer = useRef(null);
+  const [username, setUserName] = useState(getName());
   const [userProfile, setUserProfile] = useState(getProfile());
 
   const handleFile = () => {
     refContainer.current.click();
   };
+
+  useEffect(() => {
+    const Name = localStorage.getItem("CurrentUserName");
+
+    if (Name !== username) {
+      setUserName(Name);
+    }
+    // eslint-disable-next-line
+  }, [username]);
 
   const onFileChange = (e) => {
     const file = e.target.files[0];
@@ -86,7 +102,7 @@ const ProfileNav = () => {
             </div>
           )}
         </div>
-        <h2 className="profile_name">hello energy</h2>
+        <h2 className="profile_name">hello {username}</h2>
       </div>
     </Wrapper>
   );
