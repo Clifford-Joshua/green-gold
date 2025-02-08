@@ -6,6 +6,8 @@ import { PiGearSixBold } from "react-icons/pi";
 import { LuNotebookPen } from "react-icons/lu";
 import { FaGraduationCap } from "react-icons/fa6";
 import { FaUserCheck, FaBook } from "react-icons/fa";
+import { FaHeadphonesAlt } from "react-icons/fa";
+
 
 import {
   checkAssignment,
@@ -88,6 +90,13 @@ const MobileSidebar = () => {
             </p>
             <h2> Settings</h2>
           </Link>
+
+           <Link to={"/contact-us"} className="links">
+                    <p className="icon">
+                      <FaHeadphonesAlt />
+                    </p>
+                    <h2>contact us</h2>
+                  </Link>
         </div>
       </div>
     </Wrapper>
