@@ -68,14 +68,14 @@ const SmallNavLinks = () => {
           <div className="register_login_container">
             {isUser ? (
               isLogin ? (
-                <button className="login">
+                <button className="login" onClick={handleLogout}>
                   <div className="icon">
                     <FaUserAltSlash />
                   </div>
                   <h4 className="link_name">logout</h4>
                 </button>
               ) : (
-                <Link to={"login"} className="login" onClick={handleLogout}>
+                <Link to={"login"} className="login">
                   <div className="icon">
                     <FaUserGraduate />
                   </div>
