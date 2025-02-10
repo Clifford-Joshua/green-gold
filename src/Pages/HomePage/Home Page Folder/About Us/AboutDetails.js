@@ -13,13 +13,13 @@ const AboutDetails = () => {
           About us
         </h2>
         <h2 className="sub_title">
-          Our Edukation System <span className="orange"> Inspires </span> You
+          Our Education System <span className="orange"> Inspires </span> You
           More.
         </h2>
 
         <p className="text">
           There are many variations of passages available but the majority have
-          suffered alteration in some form by injected humour randomised words
+          suffered alteration in some form by injected humour randomized words
           which don't look even slightly believable. If you are going to use
           passage.
         </p>
