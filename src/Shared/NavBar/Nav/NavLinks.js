@@ -1,9 +1,9 @@
 import React from "react";
-import styled from "styled-components";
 import Theme from "./Theme";
-import { Link } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import styled from "styled-components";
+import { useNavigate, NavLink } from "react-router-dom";
 import { Links } from "../../../Utils/NavLink";
+import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import {
@@ -16,6 +16,7 @@ import {
 import { isUserLogout } from "../../Features/UserSlice";
 
 const NavLinks = () => {
+  const navigate = useNavigate();
   const { isUser, isLogin } = useSelector((store) => store.user);
   const dispatch = useDispatch();
 
@@ -23,6 +24,8 @@ const NavLinks = () => {
     localStorage.setItem("isLogin", false);
 
     dispatch(isUserLogout());
+
+    navigate("/");
   };
 
   return (

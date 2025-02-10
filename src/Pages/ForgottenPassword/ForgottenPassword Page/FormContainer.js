@@ -1,15 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import AccountInfo from "./AccountInfo";
 import { toast } from "react-toastify";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import FormRow from "../../../Shared/Components/LoginFormRow";
+
+import { useDispatch } from "react-redux";
+
+import { isUserLogin } from "../../../Shared/Features/UserSlice";
+
 const FormContainer = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const [userDetails, setUserDetails] = useState({
     userName: "",
     userPassword: "",
   });
+
+  const { isLogin } = useSelector((store) => store.user);
+
+  useEffect(() => {
+    localStorage.setItem("isLogin", isLogin);
+  }, [isLogin]);
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -55,6 +69,10 @@ const FormContainer = () => {
       toast.error("Incorrect Password");
       return;
     }
+
+    dispatch(isUserLogin());
+
+    localStorage.setItem("CurrentUserName", userDetails.userName);
 
     navigate("/profile");
   };

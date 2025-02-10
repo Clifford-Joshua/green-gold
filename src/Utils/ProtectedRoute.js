@@ -11,8 +11,6 @@ const ProtectedRoute = ({ children }) => {
     ? JSON.parse(localStorage.getItem("isLogin"))
     : false;
 
-  console.log(Boolean(isLogin));
-
   if (!isUser) {
     return <Navigate to={"/signup"} />;
   }

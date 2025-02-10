@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
+
 import styled from "styled-components";
 import { Form, BgContainer } from "./Login Folder";
+import { toast } from "react-toastify";
 const Login = () => {
   const Theme = localStorage.getItem("THEME");
   useEffect(() => {
@@ -8,7 +10,7 @@ const Login = () => {
   }, [Theme]);
 
   useEffect(() => {
-    alert(
+    toast(
       "click on remember me before you login else the next time you try logging in you will need to sign up afresh"
     );
   }, []);

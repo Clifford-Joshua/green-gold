@@ -45,7 +45,6 @@ const Wrapper = styled.div`
     width: 96%;
     display: flex;
     position: relative;
-    border: 2px solid red;
     justify-content: center;
   }
 

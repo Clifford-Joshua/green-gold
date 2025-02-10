@@ -53,14 +53,14 @@ const UserSlice = createSlice({
     },
     isLocalStorageUserLogin: (state) => {
       if (localStorage.getItem("isUser")) {
-        state.isUser = localStorage.getItem("isUser");
+        state.isUser = JSON.parse(localStorage.getItem("isUser"));
 
         if (localStorage.getItem("isLogin")) {
-          state.isLogin = localStorage.getItem("isLogin");
+          state.isLogin = JSON.parse(localStorage.getItem("isLogin"));
         }
       }
       if (sessionStorage.getItem("isUser")) {
-        state.isUser = sessionStorage.getItem("isUser");
+        state.isUser = JSON.parse(sessionStorage.getItem("isUser"));
       }
     },
     checkDashboard: (state) => {

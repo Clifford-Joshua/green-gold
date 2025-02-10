@@ -26,7 +26,6 @@ const Wrapper = styled.div`
   /* Mobile View */
   width: 100%;
   padding-block: 1rem;
-  border: 2px solid blue;
   background-color: var(--clr-transparent-white);
 
   ::-webkit-scrollbar {

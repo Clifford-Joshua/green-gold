@@ -26,7 +26,7 @@ const Testimony = () => {
           of a thriving community where learning leads to success!
         </p>
 
-        <div class="testimonies_container">
+        <div className="testimonies_container">
           {Testimonies.map(
             ({ stars, testimony, picture, name, student }, index) => {
               return (

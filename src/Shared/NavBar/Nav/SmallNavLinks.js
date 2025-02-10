@@ -2,7 +2,7 @@ import React from "react";
 import Theme from "./Theme";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Links } from "../../../Utils/NavLink";
 import { closeNav } from "../../Features/NavSlice";
 
@@ -18,6 +18,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { isUserLogout } from "../../Features/UserSlice";
 
 const SmallNavLinks = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { isNavOpen } = useSelector((store) => store.mobileNav);
   const { isUser, isLogin } = useSelector((store) => store.user);
@@ -26,6 +27,8 @@ const SmallNavLinks = () => {
     localStorage.setItem("isLogin", false);
 
     dispatch(isUserLogout());
+
+    navigate("/");
   };
 
   return (
