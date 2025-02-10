@@ -17,7 +17,7 @@ const CourseContainer = () => {
   return (
     <Wrapper>
       <div className="container_holder">
-        {CourseApi.map(
+        {CourseApi.slice(0, 6).map(
           ({ courseIcon, courseImg, courseName, courseText }, index) => {
             return (
               <div className="course_container" key={index}>
@@ -58,6 +58,12 @@ const CourseContainer = () => {
           }
         )}
       </div>
+      <Link
+        to={"/course"}
+        className="btn btn-outline-warning btn-lg text-capitalize fw-bolder"
+      >
+        view more
+      </Link>
     </Wrapper>
   );
 };
@@ -65,8 +71,10 @@ const CourseContainer = () => {
 const Wrapper = styled.div`
   /* ============================================ */
   /* Mobile View */
+  gap: 1rem;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
 
   .container_holder {
@@ -162,6 +170,7 @@ const Wrapper = styled.div`
   /* ============================================ */
   /* Ipad View */
   @media screen and (width >= 764px) {
+    gap: 2.5rem;
     .course_title {
       font-size: 1.5rem;
     }

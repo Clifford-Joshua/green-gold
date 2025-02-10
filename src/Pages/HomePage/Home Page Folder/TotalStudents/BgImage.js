@@ -39,7 +39,7 @@ const BgImage = () => {
     };
 
     const handleScroll = () => {
-      if (!scrollStarted && window.scrollY >= TotalHeight) {
+      if (!scrollStarted && window.scrollY >= TotalHeight - 70) {
         setScrollStarted(true);
         handleCount(500, setCourses);
         handleCount(1900, setStudents);

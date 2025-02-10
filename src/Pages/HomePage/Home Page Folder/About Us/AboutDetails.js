@@ -1,10 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { FaBookReader } from "react-icons/fa";
 import { SiWikibooks } from "react-icons/si";
-import { FaArrowRight } from "react-icons/fa";
-import { FaHeadphones } from "react-icons/fa";
+import { FaArrowRight, FaHeadphones, FaBookReader } from "react-icons/fa";
 import { BiSolidBookBookmark } from "react-icons/bi";
 const AboutDetails = () => {
   return (
@@ -94,6 +92,7 @@ const Wrapper = styled.div`
 
   .title {
     gap: 1rem;
+    margin: auto;
     display: flex;
     font-weight: 600;
     font-size: 1.3rem;
@@ -107,7 +106,8 @@ const Wrapper = styled.div`
 
   .sub_title {
     font-weight: 700;
-    font-size: 2.5rem;
+    font-size: 2rem;
+    text-align: center;
     color: var(--black-color);
     text-transform: capitalize;
   }
@@ -222,6 +222,10 @@ const Wrapper = styled.div`
   /* ============================================================== */
   /* Desktop View */
   @media screen and (width >= 1023px) {
+    .aboutDetail_container {
+      align-items: center;
+    }
+
     .sub_title {
       font-size: 2rem;
     }

@@ -655,4 +655,46 @@ export const Data = {
       detail: "Yes",
     },
   ],
+  Testimonies: [
+    {
+      stars: [1, 2, 3, 4, 5],
+      testimony:
+        "This school has changed my life! The teachers genuinely care about us and make learning fun and engaging. I’ve grown so much, both academically and personally.",
+      picture: James,
+      name: "John D",
+      student: "Student",
+    },
+    {
+      stars: [1, 2, 3, 4, 5],
+      testimony:
+        "I’m so grateful for all the opportunities I’ve had here. From advanced classes to extracurricular activities, this school has prepared me for college and beyond. It truly feels like a second home.",
+      picture: Samuel,
+      name: "JSarah M",
+      student: "Student",
+    },
+    {
+      stars: [1, 2, 3, 4, 5],
+      testimony:
+        "I’ve never felt so supported by my teachers and classmates. The small class sizes mean everyone gets the attention they need, and I’ve made some amazing friends here.",
+      picture: Amelia,
+      name: "David L",
+      student: "Student",
+    },
+    {
+      stars: [1, 2, 3, 4, 5],
+      testimony:
+        "The school’s focus on both academics and personal development has helped me find my passion. I’ve had the chance to participate in unique programs and clubs that I wouldn’t have found anywhere else.",
+      picture: Art,
+      name: "Sophia R",
+      student: "parent",
+    },
+    {
+      stars: [1, 2, 3, 4, 5],
+      testimony:
+        "As a parent, it’s comforting to see how much my child loves going to school every day. The teachers are approachable, and the curriculum is challenging yet supportive. We couldn’t be happier.",
+      picture: Daniel,
+      name: "Emma W",
+      student: "parent",
+    },
+  ],
 };

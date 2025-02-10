@@ -22,33 +22,46 @@ const Teacher = () => {
 
   return (
     <Wrapper>
-      {TeachersApi.map(({ name, profession, image, icon, links }, index) => {
-        return (
-          <div className="container" key={index}>
-            <div className="image_container">
-              <img src={image} alt="teacher_image" className="image" />
-              <div className="social_icons_container">
-                {icon.map((item, index) => {
-                  return (
-                    <Link to={links[index]} className="icon" key={index}>
-                      {item}
-                    </Link>
-                  );
-                })}
+      <div className="holder">
+        {TeachersApi.slice(0, 3).map(
+          ({ name, profession, image, icon, links }, index) => {
+            return (
+              <div className="container" key={index}>
+                <div className="image_container">
+                  <img src={image} alt="teacher_image" className="image" />
+                  <div className="social_icons_container">
+                    {icon.map((item, index) => {
+                      return (
+                        <Link to={links[index]} className="icon" key={index}>
+                          {item}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+                <div className="details">
+                  <div className="d-flex flex-column row-gap-2">
+                    <h3 className="name">{name}</h3>
+                    <p className="profession">{profession}</p>
+                  </div>
+                  <div className="icon share_icon" onClick={handleShare}>
+                    <FaShareAlt className="share" />
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="details">
-              <div className="d-flex flex-column row-gap-2">
-                <h3 className="name">{name}</h3>
-                <p className="profession">{profession}</p>
-              </div>
-              <div className="icon share_icon" onClick={handleShare}>
-                <FaShareAlt className="share" />
-              </div>
-            </div>
-          </div>
-        );
-      })}
+            );
+          }
+        )}
+      </div>
+
+      <div className="btn_container">
+        <Link
+          to={"/course"}
+          className="btn btn-outline-warning btn-lg text-capitalize fw-bolder"
+        >
+          see more
+        </Link>
+      </div>
     </Wrapper>
   );
 };
@@ -56,14 +69,24 @@ const Teacher = () => {
 const Wrapper = styled.div`
   /* ============================================================== */
   /* Mobile View */
-  gap: 2rem;
-  display: grid;
-  padding-block: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .holder {
+    gap: 2rem;
+    width: 94%;
+    display: grid;
+    padding-block: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .btn_container {
+    width: 94%;
+  }
 
   .container {
     gap: 1rem;
-    width: 94%;
     display: flex;
     padding: 1.3rem;
     cursor: pointer;
@@ -95,7 +118,7 @@ const Wrapper = styled.div`
     display: flex;
     position: absolute;
     flex-direction: column;
-    transform: translate(150%);
+    transform: translate(180%);
     transition: var(--transitions);
   }
 

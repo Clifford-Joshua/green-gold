@@ -1,5 +1,6 @@
 import About from "./About";
 import Slide from "./Slide";
+import Video from "./Video";
 import PageIntro from "./PageIntro";
 import Testimony from "./Testimony";
 import LandingPage from "./LandingPage";
@@ -10,6 +11,7 @@ import TotalContainer from "./TotalContainer";
 export {
   About,
   Slide,
+  Video,
   PageIntro,
   Testimony,
   LandingPage,

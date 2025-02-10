@@ -33,15 +33,15 @@ const Wrapper = styled.div`
   gap: 1rem;
   display: flex;
   align-items: center;
-  padding-block: 3rem;
   flex-direction: column;
   color: var(--black-color);
 
   .title_intro {
     gap: 0.5rem;
     display: flex;
-    font-size: 1rem;
     font-weight: 900;
+    font-size: 1.2rem;
+    border-bottom: 2px solid;
     text-transform: uppercase;
     color: var(--clr-darkgreen);
   }

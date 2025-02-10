@@ -14,7 +14,7 @@ const TeachersHolder = () => {
 const Wrapper = styled.div`
   /* =============================================== */
   /* Mobile View */
-  padding-block: 5rem;
+  padding-block: 2rem;
   background-color: var(--clr-transparent-white);
 `;
 

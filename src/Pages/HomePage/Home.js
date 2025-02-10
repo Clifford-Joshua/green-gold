@@ -4,7 +4,12 @@ import {
   LandingPage,
   PageIntro,
   About,
+  Video,
   TotalContainer,
+  CourseHolder,
+  TeachersHolder,
+  Slide,
+  Testimony,
 } from "./Home Page Folder";
 
 const Home = () => {
@@ -15,6 +20,11 @@ const Home = () => {
         <PageIntro />
         <About />
         <TotalContainer />
+        <CourseHolder />
+        <Video />
+        <TeachersHolder />
+        <Testimony />
+        <Slide />
       </div>
     </Wrapper>
   );

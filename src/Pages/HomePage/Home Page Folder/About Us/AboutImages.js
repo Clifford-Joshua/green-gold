@@ -58,6 +58,7 @@ const Wrapper = styled.div`
   img {
     width: 100%;
     object-fit: cover;
+    object-position: 0 0;
   }
 
   h3 {
@@ -112,7 +113,7 @@ const Wrapper = styled.div`
   /* Desktop view */
   @media screen and (width >=1023px) {
     .image {
-      height: 50vh;
+      height: 60vh;
     }
 
     .image_container {

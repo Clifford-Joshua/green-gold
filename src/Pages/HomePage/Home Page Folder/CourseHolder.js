@@ -1,5 +1,4 @@
 import React from "react";
-import CourseBg from "./Courses Folder/CourseBg";
 import styled from "styled-components";
 import CourseTitle from "./Courses Folder/CourseTitle";
 import CourseContainer from "./Courses Folder/CourseContainer";
@@ -7,8 +6,6 @@ const CourseHolder = () => {
   return (
     <Wrapper className="CourseMainContainer">
       <div className="main_container">
-        <CourseBg />
-
         <CourseTitle />
 
         <CourseContainer />
@@ -18,6 +15,9 @@ const CourseHolder = () => {
 };
 
 const Wrapper = styled.div`
+  /* ===================================================== */
+  /* Mobile View */
+  padding-bottom: 2rem;
   background-color: var(--clr-transparent-white);
 `;
 

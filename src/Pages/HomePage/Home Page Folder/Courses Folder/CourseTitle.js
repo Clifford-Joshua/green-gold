@@ -1,15 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { GiNetworkBars } from "react-icons/gi";
+import { FaBookReader } from "react-icons/fa";
+
 const CourseTitle = () => {
   return (
     <Wrapper>
       <h4 className="title_intro">
-        <GiNetworkBars />
-        AVAILABLE COURSES
+        <FaBookReader />
+        Our Courses
       </h4>
 
-      <h2 className="title">In-demand Tech Skills</h2>
+      <h2 className="title">Let's Check Our Courses</h2>
 
       <p className="sub_title">
         Welcome to Green Gold Academy, where education meets excellence! We are
@@ -36,8 +37,10 @@ const Wrapper = styled.div`
   .title_intro {
     gap: 0.5rem;
     display: flex;
-    font-size: 1rem;
     font-weight: 700;
+    font-size: 1.5rem;
+    align-items: center;
+    border-bottom: 2px solid;
     color: var(--clr-darkgreen);
   }
 
