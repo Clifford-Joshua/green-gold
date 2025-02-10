@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { FaPlus } from "react-icons/fa";
 import { TfiCup } from "react-icons/tfi";
@@ -7,8 +7,44 @@ import Image from "../../../../Assets/StudentBg.jpg";
 import { FaUserGraduate, FaHospitalUser } from "react-icons/fa6";
 
 const BgImage = () => {
+  const refContainer = useRef(null);
+  const [courses, setCourses] = useState(0);
+  const [students, setStudents] = useState(0);
+  const [hospitals, setHospitals] = useState(0);
+  const [awards, setAwards] = useState(0);
+  const [scrollStarted, setScrollStarted] = useState(false);
+  useEffect(() => {
+    const CourseHeight = document.querySelector(".CourseMainContainer");
+    const TotalHeight = CourseHeight.getBoundingClientRect().bottom;
+    const handleCount = (targetValue, setter) => {
+      let current = 0;
+      const increment = () => {
+        current += Math.ceil(targetValue / 25);
+        if (current > targetValue) {
+          current = targetValue;
+        }
+        setter(current);
+        if (current < targetValue) {
+          setTimeout(increment, 50);
+        }
+      };
+      increment();
+    };
+    const handleScroll = () => {
+      if (!scrollStarted && window.scrollY >= TotalHeight) {
+        setScrollStarted(true);
+        handleCount(500, setCourses);
+        handleCount(1900, setStudents);
+        handleCount(750, setHospitals);
+        handleCount(30, setAwards);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [scrollStarted]);
+
   return (
-    <Wrapper>
+    <Wrapper ref={refContainer}>
       <div className="total">
         <div className="icon_container">
           <div className="icon_holder">
@@ -16,7 +52,7 @@ const BgImage = () => {
           </div>
           <div className="border_line"></div>
         </div>
-        <h2 className="totals">500</h2>
+        <h2 className="totals">{courses}</h2>
         <h3 className="names">
           <FaPlus />
           Total Courses
@@ -30,7 +66,7 @@ const BgImage = () => {
           </div>
           <div className="border_line"></div>
         </div>
-        <h2 className="totals">750</h2>
+        <h2 className="totals">{students}</h2>
         <h3 className="names">
           <FaPlus />
           Our Students
@@ -44,7 +80,7 @@ const BgImage = () => {
           </div>
           <div className="border_line"></div>
         </div>
-        <h2 className="totals">350</h2>
+        <h2 className="totals">{hospitals}</h2>
         <h3 className="names">
           <FaPlus />
           Total Hospitals
@@ -58,7 +94,7 @@ const BgImage = () => {
           </div>
           <div className="border_line"></div>
         </div>
-        <h2 className="totals">50</h2>
+        <h2 className="totals">{awards}</h2>
         <h3 className="names">
           <FaPlus />
           Total Awards
@@ -83,7 +119,7 @@ const Wrapper = styled.div`
       rgba(17, 110, 99, 0.5),
       rgba(17, 110, 99, 0.57)
     ),
-    url(${Image}) center/cover, no-repeat, fixed;
+    url(${Image}) center/cover no-repeat;
 
   .total {
     gap: 0.5rem;
