@@ -83,7 +83,7 @@ const Wrapper = styled.div`
       rgba(17, 110, 99, 0.5),
       rgba(17, 110, 99, 0.57)
     ),
-    url(${Image}) center/cover no-repeat fixed;
+    url(${Image}) center/cover, no-repeat, fixed;
 
   .total {
     gap: 0.5rem;
