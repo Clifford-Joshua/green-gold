@@ -12,6 +12,6 @@
 ### is a school site , basically one of my personal project ,try creating an authication using js, and it was fun.........
 you can visit the site using the link below
 feel free to check it out and give me your feed back
-#### link green-gold-acadamy.netlify.app
+#### Project-Link : https://green-gold-acadamy.netlify.app/
 
 
